@@ -1,0 +1,40 @@
+-The equation to calculate Volume for a Cylinder is V=π(r*r)h.
+-r stands for Radius, h stands for Height, V is for volume.
+
+
+#Pseudo Code#
+1-Get Radius
+2-Set Radius to number provided
+3-Get Height
+4-Set Height to number provided
+5-Set Volume to 0.
+6-While Radius is > 0 and height is > 0
+  Set Volume to = MathPi*Radius*Radius*Height.
+7-print out Volume.
+8-if Height or Radius < or equal 0
+9- print out Invalid input error message.
+
+
+##Csharp Code##
+namespace Topic3Algorithm
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //DEFINE Variables We will use as double(data type).
+            double volume, height, radius, pi;
+            //PROMPT User to add input Then Assign Value to Vars.
+            Console.WriteLine("This is To Calculate the Volume of a Cylinder");
+            Console.WriteLine("Please input Height");
+            height = double.Parse(Console.ReadLine());
+            Console.WriteLine("Please input Radius");
+            radius = double.Parse(Console.ReadLine());
+         
+            //Equation to Calculate Volume.
+            volume = Math.PI * (radius * radius) * height;
+            //PRINT Volume value back to User.
+            Console.WriteLine("The Volume is: "+volume);
+        }
+    }
+}
