@@ -1,0 +1,41 @@
+public class Bubble_Sort
+{
+    //METHOD to Swap  2 Elements Location in Array.
+    public static void Swap(int [] arr, int a, int b)
+    {
+        int temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp;
+
+    }
+    public static void Main(string[] args)
+    {
+        int[] array = { 9, 6, 5, 4, 2, 11, 0, -1, 7 };
+        //CONFIRMS Array Is Not Sorted.
+        bool isSorted = false;
+        //MINIMIZES The Checks We Make Everytime We Iterate Over the Array by
+        //One Element, Since Each Time, Largest Element Will Be Bubbled To The 
+        //End of The Array.
+        int lastUnsorted = array.Length - 1;
+
+        while (!isSorted)
+        {
+            isSorted = true;
+            for (int i = 0; i < lastUnsorted; i++)
+            {
+                if (array[i]>array[i+1])
+                {
+                    Swap(array, i, i + 1);
+                    isSorted = false;
+                }
+            }
+            lastUnsorted--;
+        }
+        //PRINTS Array After Sorting.
+        Console.WriteLine("After");
+        for (int i = 0; i < array.Length; i++)
+        {
+            Console.Write(array[i]+" ");
+        }
+    }
+}
