@@ -1,0 +1,43 @@
+static void Main(string[] args)
+        {
+            // Declare an integer array that is not sorted
+            int[] arr = { 7, 8, 4, 6, 2, 1,11,99,-1};
+           
+            // Output the values of the array to the console
+            Console.WriteLine("Array before sort: 7,8,4,6,2,1,11,99,-1");
+            ////We are going to move in 2 directions means we need to loops
+            // One outter loop will iterate over the array from left to right which means ++
+            //another loop (inner) will be moving from right left to compare current value with previous values
+            //to check if it is smaller and swap it or not
+            //we will need 2 loops, current value var, i, j for the loops, i++, j--
+            //i will start at 1 cause if 0 there will be no previous value
+            //j has to be larger than 0 so it is not at the end, also will start at 1, to have 1 previous value
+            //the arr[i] will be = current value;
+            //if current value is > arr[j-1] then arr[j]=arr[j-1]
+            //Outside the loop
+            //arr[j]=currentvalue;
+            int currentValue;
+            for (int i = 1; i < arr.Length; i++)
+            {
+                currentValue = arr[i];
+                int j = i;
+
+                while (j>0 && arr[j-1]>currentValue)
+                {
+                    arr[j] = arr[j - 1];
+                    j--;
+
+                }
+
+                arr[j] = currentValue;
+            }
+
+
+            Console.Write("Array after sort: ");
+            foreach (int val in arr)
+            {
+                Console.Write(val + ",");
+            }
+            Console.WriteLine();
+        }
+    }
