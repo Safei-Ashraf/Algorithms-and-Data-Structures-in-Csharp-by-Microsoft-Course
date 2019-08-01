@@ -1,0 +1,40 @@
+//The basic through process in a linear search is this:
+
+//set a counter equal to 0
+//check the item at position (counter) and if it equals search term, end the algorithm
+//if search term is not found in step 2, increment counter and repeat step 2
+
+
+
+##Code##
+static void Main(string[] args)
+        {
+            // Declare an integer array that is not sorted
+            int searchValue;
+            int counter = 0;
+            int locationIndex=0;
+            int[] arr = { 7, 8, 4, 6, 2, 1, 11, 99, -1 };
+
+
+            //LINEAR SEARCH ALGORITHM
+            Console.Write("Add Value to Search for: ");
+            searchValue = int.Parse(Console.ReadLine());
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] == searchValue)
+                {
+                    counter += 1;
+                    locationIndex = i;
+                }
+            }
+            if (counter == 0)
+            {
+                Console.WriteLine("Search Failed");
+            }
+
+            if (counter!=0)
+            {
+                Console.WriteLine("Items was found {0} time(s) in Array \n Under index {1}", counter, locationIndex);
+            }
+
+        }
